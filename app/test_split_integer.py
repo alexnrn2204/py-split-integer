@@ -11,12 +11,11 @@ def test_should_split_into_equal_parts_when_value_divisible_by_parts() -> None:
 
 def test_should_return_part_equals_to_value_when_split_into_one_part() -> None:
     result = split_integer(8, 1)
-    assert len(result) == 1 and result[0] == 8
+    assert split_integer(8, 1)[0] == 8
 
 
 def test_parts_should_be_sorted_when_they_are_not_equal() -> None:
-    result = split_integer(17, 4)
-    assert result == sorted(result)
+    assert split_integer(17, 4) == [4, 4, 4, 5]
 
 
 def test_should_add_zeros_when_value_is_less_than_number_of_parts() -> None:
